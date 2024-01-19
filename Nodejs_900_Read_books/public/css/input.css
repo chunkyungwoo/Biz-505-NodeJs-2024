@@ -1,0 +1,54 @@
+.book {
+  width: 80%;
+  margin: 5px auto;
+}
+
+h3.book {
+  padding: 1.1rem;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+form.book {
+  border: 1px solid #aaa;
+  padding: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5), 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+form.book input,
+form.book button {
+  display: block;
+  width: 70%;
+  margin: 5px auto;
+  padding: 8px;
+  border-radius: 10px;
+  outline: none;
+}
+
+form.book input {
+  border: 1px solid #eee;
+}
+form.book input:hover {
+  background-color: #eee;
+}
+form.book input:focus {
+  border: 1px solid blue;
+}
+
+form.book button {
+  background-color: green;
+  color: white;
+}
+
+form.book button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+div.book.error {
+  width: 60%;
+  margin: 0 auto;
+  color: red;
+  font-size: 0.7rem;
+}

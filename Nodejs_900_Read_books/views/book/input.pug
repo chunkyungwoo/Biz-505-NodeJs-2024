@@ -1,0 +1,35 @@
+extends ../layout
+
+block content 
+    link(rel="stylesheet", href="/css/input.css")
+
+    if !BTD
+        script(src="/js/input.js")
+    h3.book 도서정보 #{BTD ? "도서등록" : "입력"}
+    form.book.input(method="POST")
+        if BTD                                    
+            input#b_num(name="b_num", placeholder="ISBN을 입력해 주세요",
+            | value=`${BTD ? BTD.b_num : ""}` , readonly = "readonly")
+        else
+            input#b_num(name="b_num", placeholder="ISBN을 입력해 주세요",
+            | value=`${BTD ? BTD.b_num : ""}`)   
+        div.book.error.b_title
+        input#b_title(name="b_title",placeholder="도서명을 입력해 주세요",
+        | value=`${BTD ? BTD.b_title : ""}`)
+        div.book.error.b_author
+        input#b_author(name="b_author",placeholder="저자를 입력해 주세요",
+        | value=`${BTD ? BTD.st_dept : ""}`)
+        div.book.error.b_author
+
+        input#b_publisher(name="b_publisher",placeholder="출판사를 입력해 주세요",
+        | value=`${BTD ? BTD.b_publisher : ""}`)
+        input#b_price(name="b_price",placeholder="가격을 입력해 주세요",
+        | value=`${BTD ? BTD.b_price : ""}`)
+        input#b_discount(name="b_discount",placeholder="할인가를 입력해 주세요",
+        | value=`${BTD ? BTD.b_discount : ""}`)
+        input#b_pubdate(name="b_pubdate",placeholder="발행일을 입력해 주세요",type="date",
+        | value=`${BTD ? BTD.b_pubdate : ""}`)
+
+        button(type=`${BTD ? "submit" : "button"}`) 저장
+        button(type=`${BTD ? "submit" : "button"}`) 새로작성
+        button(type=`${BTD ? "submit" : "button"}`) 리스트보기
