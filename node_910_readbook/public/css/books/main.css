@@ -3,6 +3,7 @@
 section.books {
   flex: 1;
   display: flex;
+  overflow: auto;
 }
 aside {
   flex: 1;
@@ -34,4 +35,20 @@ article.body {
   flex: 5;
   border: 1px solid green;
   height: 100%;
+  overflow: auto;
+}
+/* 현재화면이 768px 보다 작으면 */
+@media screen and (max-width: 768px) {
+  section.books {
+    flex-direction: column;
+  }
+  aside {
+    flex: 0;
+    flex-direction: row;
+    padding-top: 0;
+    a {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
 }

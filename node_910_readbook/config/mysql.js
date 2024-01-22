@@ -3,7 +3,7 @@ const mysql_info = {
   host: "localhost",
   port: "3306",
   user: "root",
-  password: "000000",
+  password: "!Biz8080",
   database: "bookdb2",
 };
 /**
