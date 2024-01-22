@@ -144,3 +144,6 @@ typings/
 
 # ETC
 .bak
+
+#security
+mysql.js
