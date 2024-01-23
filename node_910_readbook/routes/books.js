@@ -63,5 +63,7 @@ router.post("/insert", (req, res) => {
       return res.render("db_error", err);
     });
 });
-
+router.get("", () => {
+  const sql = "";
+});
 export default router;
