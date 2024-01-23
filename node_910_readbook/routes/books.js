@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import DB from "../config/mysql.js";
 const router = express.Router();
 
@@ -63,7 +63,45 @@ router.post("/insert", (req, res) => {
       return res.render("db_error", err);
     });
 });
-router.get("", () => {
-  const sql = "";
+router.get("/:isbn/detail", (req, res) => {
+  const isbn = req.params.isbn;
+  const sql = "SELECT * FROM tbl_books WHERE isbn = ? ";
+  dbConn
+    .query(sql, isbn)
+    .then((rows) => {
+      // return res.json(rows[0][0]);
+      return res.render("books/detail1", { book: rows[0][0] });
+    })
+    .catch((err) => {
+      return res.json(err);
+    });
+  // return res.json(isbn);
 });
+
+router.get("/:isbn/delete", (req, res) => {
+  const isbn = req.params.isbn;
+  const sql = " DELETE FROM tbl_books WHERE isbn = ? ";
+  dbConn
+    .query(sql, isbn)
+    .then((_) => {
+      return res.redirect("/books");
+    })
+    .catch((err) => {
+      return res.render("db_eroor", err);
+    });
+});
+
+router.get("/:isbn/update", (req, res) => {
+  const isbn = req.params.isbn;
+  const sql = " SELECT * FROM tbl_books WHERE isbn = ? ";
+  dbConn
+    .query(sql, isbn)
+    .then((rows) => {
+      return res.render("books/input", { book: rows[0][0] });
+    })
+    .catch((err) => {
+      return res.render("db_error", err);
+    });
+});
+
 export default router;
