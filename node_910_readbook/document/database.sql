@@ -114,3 +114,6 @@ SHOW DATABASES;
 GRANT ALL PRIVILEGES ON bookDB2.*TO 'ckw2434'@'localhost';
 -- 기존에 부여된 권한을 회수하기
 REVOKE ALL PRIVILEGES ON *.* FROM 'ckw2434'@'localhost';
+
+USE bookdb2;
+DROP TABLE tbl_books;
