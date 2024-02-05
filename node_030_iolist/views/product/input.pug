@@ -1,0 +1,29 @@
+extends ../layout 
+
+block content 
+    link(rel="stylesheet", href="/css/input.css")
+    script(src="/js/input.js")
+    form.iolist(method="POST")
+        div
+            span 상품코드
+            input(type="text",name= "p_code")
+
+            span 상품이름
+            input(type="text",name= "p_name")
+        div 
+            span 품목
+            input(type="text",name= "p_item")
+
+            span 규격
+            input(type="text",name= "p_div")
+        div 
+            span 매입단가
+            input(type="text",name= "p_pirice")
+
+            span 매출단가
+            input(type="text",name= "p_oprice")
+        div.img
+            img(src="", alt="")
+        div.btn_box
+            button(type="button") 입력
+            button(type="button") 취소
