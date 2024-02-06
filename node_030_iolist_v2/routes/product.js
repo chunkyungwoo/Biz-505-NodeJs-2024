@@ -1,5 +1,6 @@
 import express from "express";
 import DB from "../models/index.js";
+import { upLoad } from "../modules/file_upload.js";
 const PRODUCTS = DB.models.tbl_products;
 const IOLIST = DB.models.tbl_iolist;
 const DEPTS = DB.models.tbl_depts;
@@ -14,6 +15,15 @@ router.get("/", async (req, res) => {
   return res.render("product/list", { PRODUCTS: rows });
 });
 
+router.get("/insert", (req, res) => {
+  return res.render("product/input");
+});
+
+router.post("/insert", upLoad.single("p_image"), (req, res) => {
+  const file = req.file;
+  return res.json({ body: req.body, file });
+});
+
 router.get("/:pcode/detail", async (req, res) => {
   const pcode = req.params.pcode;
   const row = await PRODUCTS.findByPk(pcode, {
@@ -21,12 +31,7 @@ router.get("/:pcode/detail", async (req, res) => {
   });
   return res.render("product/detail", { PRODUCT: row });
 });
-router.get("/insert", async (req, res) => {
-  return res.render("product/input");
-});
-router.post("/insert", async (req, res) => {
-  res.json(req.body);
-});
+
 router.get("/:pcode/update", async (req, res) => {
   const pcode = req.params.pcode;
   const row = await PRODUCTS.findByPk(pcode);

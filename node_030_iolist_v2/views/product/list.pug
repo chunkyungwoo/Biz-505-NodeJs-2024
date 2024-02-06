@@ -2,10 +2,12 @@ extends ../layout
 
 block content 
     script(src="/js/product.js")
-    link(rel="stylesheet", href="/css/list.css")
-    h1 상품관리
-
-    table.products 
+    link(rel="stylesheet", href="/css/product.css")
+    form.search.products
+        input.search#p_search(type="text",name="p_search",placeholder="검색어를 입력 후 Enter")
+        input.search#btn_search(type="submit",value="조회")
+        input.insert#btn_insert(type="button",value="상품추가")
+    table.list.products 
         tr
             th 상품코드
             th 상품이름
