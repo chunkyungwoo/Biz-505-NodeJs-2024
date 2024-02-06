@@ -1,0 +1,13 @@
+table.products {
+  width: 100%;
+  text-align: left;
+  tr {
+    background-color: #ddd;
+    th {
+      margin: 100px;
+    }
+  }
+}
+div.btn_box {
+  text-align: center;
+}
