@@ -2,11 +2,10 @@ extends ../layout
 
 block content
     link(rel="stylesheet", href="/css/iolist.css")
-    script(src="/js/list.js")
     div.iolist.btn_box
         if user 
             a(href="/iolist/insert") 추가
-    table.list.iolist 
+    table.list.iolist
         tr
             th 거래일자
             th 거래시각
@@ -19,8 +18,8 @@ block content
             tr
                 td= item.io_date 
                 td= item.io_time 
-                td= item.io_pcode
-                td= item.IO_상품.p_name  
-                td= item.io_dcode  
+                td= item.io_pcode 
+                td= item.IO_상품.p_name 
+                td= item.io_dcode 
                 td= item.IO_거래처.d_name 
                 td= item.io_div 

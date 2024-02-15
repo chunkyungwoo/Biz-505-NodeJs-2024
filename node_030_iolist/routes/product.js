@@ -17,20 +17,13 @@ router.get("/", async (req, res) => {
 router.get("/:pcode/detail", async (req, res) => {
   const pcode = req.params.pcode;
   const row = await PRODUCTS.findByPk(pcode, {
-    include: { model: IOLIST, as: "IOS", include: { model: DEPTS, as: "IO_거래처" } },
+    include: {
+      model: IOLIST,
+      as: "IOS",
+      include: { model: DEPTS, as: "IO_거래처" },
+    },
   });
   return res.render("product/detail", { PRODUCT: row });
-});
-router.get("/insert", async (req, res) => {
-  return res.render("product/input");
-});
-router.post("/insert", async (req, res) => {
-  res.json(req.body);
-});
-router.get("/:pcode/update", async (req, res) => {
-  const pcode = req.params.pcode;
-  const row = await PRODUCTS.findByPk(pcode);
-  return res.render("product/update", { PRODUCT: row });
 });
 
 export default router;

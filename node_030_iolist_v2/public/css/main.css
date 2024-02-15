@@ -17,18 +17,22 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 header {
   padding: 1.2rem;
   text-align: center;
 }
+
 nav.main {
   background-color: black;
   color: white;
 }
+
 nav.main ul {
-  list-style: none;
+  list-style-type: none;
   display: flex;
 }
+
 nav.main li {
   padding: 12px 16px 8px 16px;
   margin: 3px;
@@ -45,6 +49,7 @@ nav.main li {
     cursor: pointer;
   }
 }
+
 table.list {
   margin: 20px auto;
   min-width: 1148px;
@@ -53,7 +58,7 @@ table.list {
   tr {
     background-color: #fafafa;
     &:hover {
-      background-color: #e7e7e7;
+      background-color: #e7e7e7 !important;
       cursor: pointer;
     }
     &:nth-of-type(even) {

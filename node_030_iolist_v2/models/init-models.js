@@ -11,10 +11,23 @@ export default function initModels(sequelize) {
   const tbl_members = _tbl_members.init(sequelize, DataTypes);
   const tbl_products = _tbl_products.init(sequelize, DataTypes);
 
-  tbl_iolist.belongsTo(tbl_depts, { as: "IO_거래처", foreignKey: "io_dcode" });
-  tbl_depts.hasMany(tbl_iolist, { as: "tbl_iolists", foreignKey: "io_dcode" });
-  tbl_iolist.belongsTo(tbl_products, { as: "IO_상품", foreignKey: "io_pcode" });
-  tbl_products.hasMany(tbl_iolist, { as: "IOS", foreignKey: "io_pcode" });
+  tbl_iolist.belongsTo(tbl_depts, {
+    as: "IO_거래처",
+    foreignKey: "io_dcode",
+  });
+  tbl_depts.hasMany(tbl_iolist, {
+    as: "tbl_iolists",
+    foreignKey: "io_dcode",
+  });
+
+  tbl_iolist.belongsTo(tbl_products, {
+    as: "IO_상품",
+    foreignKey: "io_pcode",
+  });
+  tbl_products.hasMany(tbl_iolist, {
+    as: "IOS",
+    foreignKey: "io_pcode",
+  });
 
   return {
     tbl_depts,

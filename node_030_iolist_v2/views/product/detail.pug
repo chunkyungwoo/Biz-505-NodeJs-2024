@@ -1,11 +1,18 @@
-extends ../layout 
+extends ../layout
 
-block content 
-    div.detail 
-        h3 #{PRODUCT.p_name} 상품 자세히 보기
-        p=PRODUCT.p_code 
-        p=PRODUCT.p_item 
-    table.detail.iolist 
+block content
+    div.detail
+        div.image
+            if PRODUCT.p_image_name
+                img(src=`/uploads/${PRODUCT.p_image_name}`,width="300px",
+                alt=`${PRODUCT.p_image_origin_name}`)
+            else 
+                img(src="/images/noImage.svg", width="300px" )
+        div
+            h3 #{PRODUCT.p_name} 상품 자세히 보기
+            p= PRODUCT.p_code
+            p= PRODUCT.p_item
+    table.detail.iolist
         tr
             th 거래일자
             th 거래시각
@@ -13,11 +20,11 @@ block content
             th 거래처코드
             th 거래처명
             th 대표자
-            each item in PRODUCT.IOS
+            each item in PRODUCT.IOS 
                 tr
                     td= item.io_date 
                     td= item.io_time 
                     td #{item.io_div == "1" ? "매입" : "매출"}
-                    td= item.io_dcode  
+                    td= item.io_dcode 
                     td= item.IO_거래처.d_name
                     td= item.IO_거래처.d_ceo

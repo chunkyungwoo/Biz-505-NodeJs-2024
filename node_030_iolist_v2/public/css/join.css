@@ -8,10 +8,11 @@ form.join {
     color: blue;
   }
 }
+
 form.join div {
-  display: flex;
   width: 80%;
   margin: 3px auto;
+  display: flex;
   label,
   input {
     padding: 8px;
