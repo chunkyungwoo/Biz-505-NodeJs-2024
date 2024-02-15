@@ -6,21 +6,10 @@ const MEMO = DB.models.tbl_memo;
 const router = express.Router();
 
 router.post("/insert", upLoad.single("m_image"), async (req, res) => {
-  let mCode = req.body.m_seq;
-  if (mCode === "000") {
-    const rows = await MEMO.findAll({
-      order: [["m_seq", "DESC"]],
-      limit: 1,
-    });
-    mCode = rows[0].m_seq;
-    mCode = makeMCodenew(mCode);
-    req.body.m_seq = mCode;
-  }
-  const file = req.file;
-  if (file) {
-    req.body.m_image_name = file.filename;
-    req.body.m_image_origin_name = file.originalname;
-  }
+  const m_image = req.file.filename;
+  req.body.m_seq = 0;
+  req.body.m_image = m_image;
+  req.body.m_author = "ckw2434@naver.com";
   try {
     await MEMO.create(req.body);
     return res.redirect("/memo");
