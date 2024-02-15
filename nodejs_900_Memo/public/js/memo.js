@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     메모내용: "m_memo",
   };
   const url = new URL(document.location.href);
-  const sort = url.searchParams.get("sort");
-  const order = url.searchParams.get("order");
+
   const memo_table = document.querySelector("table.memo");
 
   memo_table?.addEventListener("click", (e) => {
