@@ -6,7 +6,7 @@ const DIV_BOX = {
 };
 document.addEventListener("DOMContentLoaded", () => {
   const div_box = document.querySelector("div.box");
-  div_box.addEventListener("click", (e) => {
+  div_box?.addEventListener("click", (e) => {
     const target = e.target;
     if (target.tagName === "BUTTON") {
       const divText = target.textContent;

@@ -31,7 +31,19 @@ router.post("/insert", upLoad.single("m_image"), async (req, res) => {
     return res.json(error);
   }
 });
-router.get("/input", async (req, res) => {
-  return res.json(22);
+router.get("/:m_seq/detail", async (req, res) => {
+  const m_seq = req.params.m_seq;
+  const data = await MEMO.findByPk(m_seq);
+  return res.render("detail", { item: data });
+});
+router.get("/:m_seq/delete", async (req, res) => {
+  const m_seq = req.params.m_seq;
+  await MEMO.delete({ where: { m_seq } });
+  return res.redirect("/");
+});
+router.get("/:m_seq/update", async (req, res) => {
+  const m_seq = req.params.m_seq;
+  const data = await MEMO.findByPk(m_seq);
+  return res.render("input", { data });
 });
 export default router;
