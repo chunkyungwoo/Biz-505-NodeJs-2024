@@ -7,6 +7,7 @@ export default class tbl_memos extends Model {
         m_seq: {
           type: DataTypes.BIGINT,
           allowNull: false,
+          autoIncrement: true,
           primaryKey: true,
         },
         m_author: {
@@ -23,11 +24,11 @@ export default class tbl_memos extends Model {
         },
         m_subject: {
           type: DataTypes.STRING(50),
-          allowNull: true,
+          allowNull: false,
         },
         m_memo: {
           type: DataTypes.STRING(400),
-          allowNull: true,
+          allowNull: false,
         },
         m_image: {
           type: DataTypes.STRING(125),
