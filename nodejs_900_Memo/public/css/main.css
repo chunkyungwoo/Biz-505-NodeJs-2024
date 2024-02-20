@@ -17,3 +17,21 @@ a {
   color: inherit;
   text-decoration: none;
 }
+header,
+footer,
+section.main {
+  width: 60%;
+  margin: 10px auto;
+}
+header {
+  border: 1px solid #ddd;
+  padding: 0.7rem;
+  font-weight: bold;
+  margin-top: 30px;
+}
+footer {
+  text-align: center;
+  background-color: #8c8ce5;
+  color: white;
+  padding: 0.3rem;
+}
