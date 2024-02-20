@@ -22,6 +22,17 @@ router.get("/", async (req, res, next) => {
   // index.pug 를 rendering 할때 사용하도록 보내주기
 });
 
+router.get("/:seq/delete", async (req, res) => {
+  const m_seq = req.params.seq;
+
+  // PK 키 값으로 데이터를 SELECT 하고
+  // 데이터 정보를 destroy() 하여 데이터 삭제하는 방법
+  const rows = await MEMOS.findByPk(m_seq);
+  await rows.destroy();
+
+  return res.redirect("/");
+});
+
 // 02-19
 router.post("/update/:seq", upLoad.single("m_image"), async (req, res) => {
   const seq = req.params.seq;
