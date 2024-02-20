@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   const time = moment().format("hh:mm");
 
   const rows = await MEMO.findAll();
-  res.render("layout", { MEMO: rows, m_search, today, time });
+  res.render("layout", { MEMO: rows, today, time });
 });
 
 router.get("insert", async (req, res) => {

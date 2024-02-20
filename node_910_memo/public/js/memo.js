@@ -77,7 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
       toMemo.value = json.m_memo;
 
       // 이미지에 메모의 이미지를 세팅하기
-      memo_image.src = `/images/${json.m_image}`;
+      if (json.m_image) {
+        memo_image.src = `/images/${json.m_image}`;
+      } else {
+        memo_image.src = `/images/noImage.svg`;
+      }
 
       // btn_save 는 input tag 를 사용한 button 이므로 value 속성을
       // 변경하면 화면에 보이는 text 가 변경된다
