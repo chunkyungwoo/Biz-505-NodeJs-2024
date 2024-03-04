@@ -20,6 +20,7 @@ import logger from "morgan";
 import indexRouter from "../routes/index.js";
 import usersRouter from "../routes/users.js";
 import naverRouter from "../routes/naver.js";
+import apiRouter from "../routes/api.js";
 
 // create express framework
 const app = express();
@@ -70,6 +71,7 @@ app.use(express.static(path.join("public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/naver", naverRouter);
+app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
