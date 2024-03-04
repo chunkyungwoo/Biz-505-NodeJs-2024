@@ -17,6 +17,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 header,
 footer,
 section.main {
@@ -31,7 +32,7 @@ header {
 }
 footer {
   text-align: center;
-  background-color: #8c8ce5;
+  background-color: #5e4e4e;
   color: white;
   padding: 0.3rem;
 }

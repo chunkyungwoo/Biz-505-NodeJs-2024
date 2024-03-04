@@ -38,7 +38,7 @@ router.post("/update/:seq", upLoad.single("m_image"), async (req, res) => {
   const seq = req.params.seq;
   const imageFile = req.file;
   req.body.m_image = imageFile?.filename;
-  req.body.m_author = "whm0304@naver.com";
+  req.body.m_author = "ckw2434@naver.com";
 
   await MEMOS.update(req.body, { where: { m_seq: seq } });
 
@@ -51,7 +51,7 @@ router.post("/", upLoad.single("m_image"), async (req, res) => {
   const m_seq = req.query.seq;
   // try {
   req.body.m_image = imageFile?.filename;
-  req.body.m_author = "whm0304@naver.com";
+  req.body.m_author = "ckw2434@naver.com";
   if (m_seq) {
     await MEMOS.update(req.body, { where: { m_seq } });
   } else {

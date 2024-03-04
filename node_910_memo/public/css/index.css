@@ -69,8 +69,8 @@ form.input {
   }
 }
 input.update {
-  background-color: greenyellow;
-  color: black;
+  background-color: darkcyan;
+  color: white;
   border: none;
   outline: none;
 }
