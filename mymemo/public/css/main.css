@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(230, 230, 135);
+}
+nav.main {
+  background-color: rgb(237, 185, 148);
+}
+nav.main ul {
+  list-style: none;
+  display: flex;
+}
+nav.main li {
+  padding: 12px 15px 12px 15px;
+  margin: 3px;
+  border-bottom: 3px solid transparent;
+  transition: 0.7s;
+  &:nth-last-of-type(2) {
+    margin-right: auto;
+  }
+  &:hover {
+    cursor: pointer;
+    border-bottom: 3px solid yellow;
+  }
+}

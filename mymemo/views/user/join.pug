@@ -1,0 +1,25 @@
+extends ../layout
+
+block content 
+    link(rel="stylesheet", href="/css/join.css")
+    script(src="/js/join.js")
+    form.join(method="POST")
+        if NEED 
+            div.error= NEED 
+        div 
+            label(for="") 아이디
+            input(type="text",name="m_id",id="id") 
+        div 
+            label(for="") 비밀번호
+            input(type="password",name="m_password",id="password") 
+        div 
+            label(for="") 비밀번호 확인
+            input(type="password",name="re_password",id="re_password") 
+        div 
+            label(for="") 이름
+            input(type="text",name="m_name",id="name") 
+        div 
+            label(for="") 이메일
+            input(type="text",name="m_email",id="email") 
+        div.btn
+            input(type="submit",id="join_btn",value="회원가입")

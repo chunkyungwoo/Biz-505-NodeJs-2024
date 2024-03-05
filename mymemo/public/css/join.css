@@ -1,0 +1,30 @@
+form.join {
+  flex: 1;
+  padding: 30px;
+  div {
+    width: 50%;
+    padding: 15px;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    input {
+      padding: 8px;
+      width: 50%;
+      border-radius: 10px;
+    }
+  }
+}
+form.join label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+div.btn input {
+  margin-left: 110px;
+}
+div.btn input:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
