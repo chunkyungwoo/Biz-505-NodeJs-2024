@@ -15,7 +15,7 @@ form.date {
   input {
     /* display: inline-block; */
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     margin: 0 3px;
     &:nth-of-type(1) {
       margin-left: 0;
