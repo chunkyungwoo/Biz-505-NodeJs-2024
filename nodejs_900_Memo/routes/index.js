@@ -12,13 +12,13 @@ router.get("/", async (req, res) => {
 
   try {
     const rows = await MEMO.findAll();
-    res.render("index", { MEMO: rows, today, time });
+    res.render("index", { MEMOS: rows, today, time });
   } catch (error) {
     return res.json(error);
   }
 });
 
-router.get("/:m_seq/detail", async (req, res) => {
+router.get("/:m_seq/delete", async (req, res) => {
   const m_seq = req.params.m_seq;
   const rows = await MEMOS.findByPk(m_seq);
   await rows.destroy();
