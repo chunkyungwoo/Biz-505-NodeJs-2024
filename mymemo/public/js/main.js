@@ -3,6 +3,7 @@ const NAV_TEXT = {
   나의메모: "나의메모",
   로그인: "로그인",
   회원가입: "회원가입",
+  로그아웃: "로그아웃",
 };
 document.addEventListener("DOMContentLoaded", () => {
   const main_nav = document.querySelector("nav.main");
